@@ -4,35 +4,19 @@ public class Main {
         int[] gas = new int[]{0, 0, 0, 0, 2, 0};
         int[] cost = new int[]{0, 0, 0, 0, 1, 0};
 
-        /*
-          [11,4,7,1,0]
-          [2,5,5,9,1]
-
-        */
-
-        /*
-        *   [5,1,2,3,4]
-            [4,4,1,5,1]
-            >> 4 >> Ok
-
-        * */
-
         int index = canCompleteCircuit(gas, cost);
         System.out.println(index);
     }
 
     public static int canCompleteCircuit(int[] gas, int[] cost) {
         int length = gas.length;
-        int index = -1, myFuelOil = 0;
-
-        int jj;
-        int donulen = 0;
+        int index = -1, myFuelOil, jj, donulen;
 
         for (int i = 0; i < length; i++) {
 
             if (gas[i] > cost[i]) {
-                index = i;
 
+                index = i;
                 myFuelOil = gas[i];
                 donulen = 0;
 
@@ -61,10 +45,9 @@ public class Main {
                 if (length == 1) {
                     return i;
                 }
-                if (gas[i] > cost[i]){
+                if (gas[i] > cost[i]) {
                     index = i;
                 }
-
             }
         }
 
